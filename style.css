@@ -1,0 +1,78 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #c2ffdd;
+  text-align: center;
+}
+
+/* ENCABEZADO */
+#titulo {
+  color: #1a0b42;
+}
+
+/* CONTENEDOR SUPERIOR */
+.contenedor {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.lateral {
+  width: 20%;
+}
+
+.lateral img {
+  width: 100%;
+  max-width: 200px;
+}
+
+.centro {
+  width: 60%;
+}
+
+/* MENÚ */
+.menu button {
+  padding: 10px;
+  margin: 5px;
+  background-color: #0077cc;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+.menu button:hover {
+  background-color: #005fa3;
+}
+
+/* PANTALLAS */
+.pantalla {
+  background: white;
+  width: 300px;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.oculto {
+  display: none;
+}
+
+/* 📱 MODO CELULAR */
+@media (max-width: 768px) {
+  .contenedor {
+    flex-direction: column;
+  }
+
+  .lateral {
+    width: 100%;
+  }
+
+  .lateral img {
+    max-width: 120px;
+  }
+
+  .centro {
+    width: 100%;
+  }
+}
