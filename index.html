@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Tesya</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="contenedor">
+
+  <div class="lateral izquierda">
+    <img src="img1.jpg">
+  </div>
+
+  <div class="centro">
+    <img src="Logo.png" width="180">
+    <h1 id="titulo">Tesya - Tejido tradicional</h1>
+    <h2>🌡 Sistema de Control de Temperatura</h2>
+  </div>
+
+  <div class="lateral derecha">
+    <img src="img2.jpg">
+  </div>
+
+</div>
+
+</body>
+
+
+<div class="menu">
+  <button onclick="mostrar('inicio')">Inicio</button>
+  <button onclick="mostrar('control')">Control</button>
+  <button onclick="mostrar('sensores')">Sensores</button>
+</div>
+
+<div id="inicio" class="pantalla">
+  <h2>Pantalla Principal</h2>
+  <p>Temperatura actual: <strong><span id="temp">25</span> °C</strong></p>
+<p id="alertaTemp"></p>
+
+  <p>Estado del sensor: <strong><span id="estado">Activo</span></strong></p>
+</div>
+
+<div id="control" class="pantalla oculto">
+  <h2>Control de Temperatura</h2>
+
+  <label>Temperatura mínima:</label><br>
+  <input type="number" id="minTemp" value="20"><br><br>
+
+  <label>Temperatura máxima:</label><br>
+  <input type="number" id="maxTemp" value="30"><br><br>
+
+  <button onclick="guardarRango()">Guardar rango</button>
+
+  <p id="mensajeControl"></p>
+</div>
+
+<div id="sensores" class="pantalla oculto">
+  <h2>Estado de Sensores</h2>
+
+<p>Sensor 1: <span id="sensor1">✔ Funcionando</span></p>
+<p>Sensor 2: <span id="sensor2">✔ Funcionando</span></p>
+<p>Sensor 3: <span id="sensor3">✔ Funcionando</span></p>
+<p>Sensor 4: <span id="sensor4">✔ Funcionando</span></p>
+
+  <button onclick="probarSensor()">Probar sensores</button>
+</div>
+
+
+<script src="script.js"></script>
+</body>
+</html>
