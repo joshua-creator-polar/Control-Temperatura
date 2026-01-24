@@ -35,6 +35,19 @@ function probarSensor() {
 }
 
 setInterval(() => {
+let mensajeClima = document.getElementById("mensajeClima");
+
+if (temperatura < min) {
+  mensajeClima.innerText = "🧥 Temperatura baja, tomar precauciones";
+  mensajeClima.style.color = "blue";
+} else if (temperatura > max) {
+  mensajeClima.innerText = "🔥 Temperatura alta, evitar sobrecalentamiento";
+  mensajeClima.style.color = "red";
+} else {
+  mensajeClima.innerText = "✅ Clima estable, sin riesgos";
+  mensajeClima.style.color = "green";
+}
+
   temperatura = Math.floor(Math.random() * 15) + 20;
   document.getElementById("temp").innerText = temperatura;
 
@@ -49,3 +62,6 @@ setInterval(() => {
   }
 
 }, 30000); // 5000 ms = 5 segundos
+
+
+
