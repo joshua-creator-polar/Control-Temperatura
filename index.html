@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tesya</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- 🔐 LOGIN -->
+<div id="login" class="pantalla">
+<h2 id="empresaLogin"></h2>
+
+  <h2>Inicio de Sesión</h2>
+  <input type="text" id="usuario" placeholder="Usuario"><br><br>
+  <input type="password" id="clave" placeholder="Contraseña"><br><br>
+  <button onclick="login()">Ingresar</button>
+  <p id="errorLogin"></p>
+</div>
+
+<!-- 🔓 APP COMPLETA -->
+<div id="app" class="oculto">
+
+  <div class="contenedor">
+
+    <div class="lateral izquierda">
+      <img src="img1.jpg">
+    </div>
+
+    <div class="centro">
+      <img src="Logo.png" width="180">
+      <h1 id="titulo">Tesya - Tejido tradicional</h1>
+      <h2>🌡 Sistema de Control de Temperatura</h2>
+    </div>
+
+    <div class="lateral derecha">
+      <img src="img2.jpg">
+    </div>
+
+  </div>
+
+  <div class="menu">
+    <button onclick="mostrar('inicio')">Inicio</button>
+    <button onclick="mostrar('control')">Control</button>
+    <button onclick="mostrar('sensores')">Sensores</button>
+    <!-- 👑 SOLO ADMIN -->
+    <button id="btnAdmin" class="oculto" onclick="mostrar('admin')">Admin</button>
+  </div>
+
+  <div id="inicio" class="pantalla">
+    <h2>Pantalla Principal</h2>
+    <p>Temperatura actual: <strong><span id="temp">25</span> °C</strong></p>
+    <p id="alertaTemp"></p>
+    <p>Estado del sensor: <strong>Activo</strong></p>
+  </div>
+
+  <div id="control" class="pantalla oculto">
+    <h2>Control de Temperatura</h2>
+
+    <label>Temperatura mínima:</label><br>
+    <input type="number" id="minTemp" value="20"><br><br>
+
+    <label>Temperatura máxima:</label><br>
+    <input type="number" id="maxTemp" value="30"><br><br>
+
+    <button onclick="guardarRango()">Guardar rango</button>
+    <p id="mensajeControl"></p>
+  </div>
+
+  <div id="sensores" class="pantalla oculto">
+    <h2>Estado de Sensores</h2>
+    <p>Sensor 1: <span id="sensor1">✔ Funcionando</span></p>
+    <p>Sensor 2: <span id="sensor2">✔ Funcionando</span></p>
+    <p>Sensor 3: <span id="sensor3">✔ Funcionando</span></p>
+    <p>Sensor 4: <span id="sensor4">✔ Funcionando</span></p>
+    <button onclick="probarSensor()">Probar sensores</button>
+  </div>
+
+  <!-- ☁️ SOLO ADMIN -->
+  <div id="admin" class="pantalla oculto">
+<h2>Panel de Administración</h2>
+<h3>🏢 Empresa: <span id="empresa">Tesya – Tejido Tradicional</span></h3>
+<p>📊 Datos almacenados en la nube (PaaS)</p>
+
+<ul id="datos"></ul>
+
+<div id="resumen"></div>
+
+    <h2>Datos guardados en la nube (PaaS)</h2>
+    <ul id="datos"></ul>
+  </div>
+
+  <div class="clima">
+    <h3>🌤 Pronóstico semanal</h3>
+    <ul>
+      <li>Lunes: 24 °C</li>
+      <li>Martes: 26 °C</li>
+      <li>Miércoles: 27 °C</li>
+      <li>Jueves: 25 °C</li>
+      <li>Viernes: 28 °C</li>
+    </ul>
+
+    <p class="precaucion" id="mensajeClima">
+      ⚠️ Tomar precauciones por cambios de temperatura
+    </p>
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
+
